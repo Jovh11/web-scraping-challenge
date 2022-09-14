@@ -73,7 +73,8 @@ class mars_scrape():
         img_url = self.scrape_image()
         table = self.scrape_table()
         hemispheres = self.all_hemispheres()
-        all_info[title] = paragraph
+        all_info['title'] = title
+        all_info['paragraph'] = paragraph
         all_info['Mars Image'] = img_url
         all_info['table'] = table
         all_info['hemispheres'] = hemispheres
