@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+        integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{{ mars.title }}</h2>
+                <p>{{ mars.paragraph }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Featured Mars Image</h2>
+                <img src="{{ mars.img_url }}" alt="Featured Mars Image">
+            </div>
+            <div class="col-md-4">
+                <h3>Mars Facts</h3>
+                <div>{{mars.table | safe}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Mars Hemispheres</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ mars.hemispheres.Cerberus }}" alt="Cerberus Hemisphere Picture" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Cerberus</h5>
+                        <p class="card-text">The Cerberus Hemisphere</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ mars.hemispheres.Schiaparelli }}"
+                        alt="Schiaparelli Hemisphere Picture" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Schiaparelli</h5>
+                        <p class="card-text">The Schiaparelli Hemisphere</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ mars.hemispheres.Syrtis }}" alt="Syrtis Hemisphere Picture" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Syrtis</h5>
+                        <p class="card-text">The Syrtis Hemisphere</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ mars.hemispheres.Valles }}" alt="Valles Hemisphere Picture" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Valles</h5>
+                        <p class="card-text">The Valles Hemisphere</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>

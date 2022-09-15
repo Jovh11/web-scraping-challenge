@@ -35,7 +35,7 @@ class mars_scrape():
     def scrape_table(self):
         tables = pd.read_html('https://galaxyfacts-mars.com')
         desired_table = tables[0]
-        html = desired_table.to_html()
+        html = desired_table.to_html(index=False)
         return html
     
     def scrape_hemispheres(self, hemisphere):
@@ -49,7 +49,7 @@ class mars_scrape():
         images = soup.find_all('a')
         img = ''
         for info in images:
-            if info.text == 'Original':
+            if info.text == 'Sample':
                 img = info['href']
         text = soup.find('div', class_='cover')
         desired_text = text.h2.text
@@ -75,7 +75,7 @@ class mars_scrape():
         hemispheres = self.all_hemispheres()
         all_info['title'] = title
         all_info['paragraph'] = paragraph
-        all_info['Mars Image'] = img_url
+        all_info['img_url'] = img_url
         all_info['table'] = table
         all_info['hemispheres'] = hemispheres
         return all_info

@@ -19,5 +19,5 @@ def scrape():
     mongo.db.collection.update_one({}, {"$set": grab}, upsert=True)
     return redirect('/')
 
-if __name__== '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
